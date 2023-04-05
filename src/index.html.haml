@@ -1,4 +1,4 @@
-!!!
+template = "!!!
 %html
   %head
     %meta{:charset => "utf-8"}
@@ -29,4 +29,8 @@
       %p
         For next steps, read the
         = succeed "." do
-          %a{:href => "http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html"} AWS CodePipeline Documentation
+          %a{:href => "http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html"} AWS CodePipeline Documentation"
+engine = Haml::Engine.new(template)
+html = engine.render
+
+puts html
